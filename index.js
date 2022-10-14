@@ -79,3 +79,15 @@ at least 2 docs each */
 //   .catch(console.error);
 
 //--------------------------------------------------//
+//Update one pet & one product
+
+// db.collection('Pets').doc('A8YVELoSZ20re6zQHAfB')
+//   .update({Breed: 'Calico'})
+//   .then(() => console.log('Update Done!'))
+//   .catch(console.error)
+
+db.collection('Products').doc('7uiE0iG7a9J9om9FTsgM')
+  .update({Price: '$24.99'})
+  .then(() => console.log('Update Done!'))
+  .catch(console.error)
+
