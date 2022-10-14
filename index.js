@@ -1,6 +1,7 @@
+//Create and connect to firestoredb
+
 import { initializeApp, cert } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
-
 import serviceAccount from "./serviceAccount.js";
 
 initializeApp({
@@ -8,6 +9,11 @@ initializeApp({
 });
 
 const db = getFirestore();
+
+//-------------------------------------------------------------------//
+/* Create and add info for a pet store
+3 collections - customers, pets, products
+at least 2 docs each */
 
 // const newCustomer = {
 //   name: 'Damian',
@@ -19,6 +25,7 @@ const db = getFirestore();
 // db.collection('Customers').add(newCustomer)
 //   .then(doc => console.log('Customer created:', doc.id))
 //   .catch(console.error);
+
 
 // const newPet = {
 //   name: 'Crush',
@@ -32,13 +39,43 @@ const db = getFirestore();
 //   .then(doc => console.log('Pet added:', doc.id))
 //   .catch(console.error);
 
-const newProduct = {
-  name:"Dog Food",
-  price:"$24.99",
-  sku:"38591",
-  stocked: "2022-09-07",
-}
 
-db.collection('Products').add(newProduct)
-  .then(doc => console.log('Product added:', doc.id))
-  .catch(console.error);
+// const newProduct = {
+//   name:"Dog Food",
+//   price:"$24.99",
+//   sku:"38591",
+//   stocked: "2022-09-07",
+// }
+
+// db.collection('Products').add(newProduct)
+//   .then(doc => console.log('Product added:', doc.id))
+//   .catch(console.error);
+
+//-----------------------------------------------------------------//
+//Query all customers, pets, & products
+
+// db.collection('Customers').get()
+//   .then(collection => {
+//     collection.docs.forEach(doc => {
+//       console.log(doc.id, doc.data())
+//     })
+//   })
+//   .catch(console.error);
+
+// db.collection('Products').get()
+//   .then(collection => {
+//     collection.docs.forEach(doc => {
+//       console.log(doc.id, doc.data())
+//     })
+//   })
+//   .catch(console.error);
+
+// db.collection('Pets').get()
+//   .then(collection => {
+//     collection.docs.forEach(doc => {
+//       console.log(doc.id, doc.data())
+//     })
+//   })
+//   .catch(console.error);
+
+//--------------------------------------------------//
